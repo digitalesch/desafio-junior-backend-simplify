@@ -68,4 +68,7 @@ def read_user(user_id: int, db: Session = Depends(get_db_connection)):
 def create_user(user: schemas.UserCreate, db: Session = Depends(get_db_connection)):
     if crud.get_user_by_email(db, email=user.email):
         raise HTTPException(status_code=400, detail="Email already registered")
-    return crud.create_user(db=db, user=user)
+    
+    returned_user = crud.create_user(db=db, user=user)
+    
+    return returned_user
