@@ -48,4 +48,6 @@ Ao serem criados os containers, os mesmos podem ser acessados através das URLs:
 ![db](https://github.com/digitalesch/desafio-junior-backend-simplify/assets/3438852/98f80f4f-d72e-4f91-bb7e-756eb3157fa5)
 ![db_2](https://github.com/digitalesch/desafio-junior-backend-simplify/assets/3438852/0c5231fa-a092-4619-afea-b054e50e380f)
 
-  
+# Tecnologias empregadas
+- Python FastAPI
+- PostgreSQL
