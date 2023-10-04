@@ -7,7 +7,31 @@ from database import engine, get_db_connection
 
 models.Base.metadata.create_all(bind=engine)
 
-app = FastAPI()
+description = """
+# ToDo List API lets you create users and task as simple endpoints.
+
+## Users
+API defines two endpoints for users:
+* **List users**
+- [GET] "/users/{user_id}": lets you search the database for a specific user_id, and if not found, returns the appropriate message!
+* **Create users**
+- [POST] "/users": lets you create a new user, and if the same email is registered in the database, returns the appropriate message!
+
+## Tasks
+* **List tasks**
+    - [GET] "/tasks/{user_id}": lets you search the database for a specific user_id or by user_id and task_id (if task_id is provided in request body), and if not found, returns the appropriate message!
+* **Create users**
+    - [POST] "/tasks/{user_id}": lets you create a new task, bound to a user_id, and if the user is not found, returns the appropriate message!
+* **Update task**
+    - [PUT] "/tasks/{user_id}/{task_id}": lets you modify a task, bound to a user_id, and if the user / task is not found, returns the appropriate message!
+"""
+
+app = FastAPI(
+    title="ToDoApp",
+    description=description,
+    summary="Deadpool's favorite app. Nuff said.",
+    version="1.0.0",
+)
 
 """
 Task routes
